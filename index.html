@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин электроники</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Магазин электроники</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showTab('products')">Товары</a></li>
+                <li><a href="#" onclick="showTab('cart')">Корзина</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products" class="tab-content">
+            <h2>Наши товары</h2>
+            <div class="product" data-price="299">
+                <div class="product-images">
+                    <img src="laptop1.jpg" alt="Ноутбук 1" onclick="openModal('laptop1.jpg')">
+                    <img src="laptop2.jpg" alt="Ноутбук 2" onclick="openModal('laptop2.jpg')">
+                    <img src="laptop3.jpg" alt="Ноутбук 3" onclick="openModal('laptop3.jpg')">
+                    <img src="laptop4.jpg" alt="Ноутбук 4" onclick="openModal('laptop4.jpg')">
+                </div>
+                <h3>Ноутбук Apple MacBook Pro</h3>
+                <p class="description">Мощный ноутбук с последними технологиями для игр и работы.</p>
+                <p class="price">299$</p>
+                <button onclick="addToCart('Ноутбук', 299)">Добавить в корзину</button>
+            </div>
+            <div class="product" data-price="99">
+                <div class="product-images">
+                    <img src="headphones1.jpg" alt="Наушники 1" onclick="openModal('headphones1.jpg')">
+                    <img src="headphones2.jpg" alt="Наушники 2" onclick="openModal('headphones2.jpg')">
+                    <img src="headphones3.jpg" alt="Наушники 3" onclick="openModal('headphones3.jpg')">
+                    <img src="headphones4.jpg" alt="Наушники 4" onclick="openModal('headphones4.jpg')">
+                </div>
+                <h3>Беспроводные наушники Apple AirPods Max</h3>
+                <p class="description">Качественные наушники с отличным звуком и комфортом.</p>
+                <p class="price">99$</p>
+                <button onclick="addToCart('Наушники', 99)">Добавить в корзину</button>
+            </div>
+            <!-- Добавьте больше товаров по аналогии -->
+            <div class="product" data-price="499">
+                <div class="product-images">
+                    <img src="iphone1.jpg" alt="Смартфон 1" onclick="openModal('iphone1.jpg')">
+                    <img src="iphone2.jpg" alt="Смартфон 2" onclick="openModal('iphone2.jpg')">
+                    <img src="iphone3.jpg" alt="Смартфон 3" onclick="openModal('iphone3.jpg')">
+                    <img src="iphone4.jpg" alt="Смартфон 4" onclick="openModal('iphone4.jpg')">
+                </div>
+                <h3>Смартфон Apple iPhone 15</h3>
+                <p class="description">Современный смартфон с высокой производительностью и отличной камерой.</p>
+                <p class="price">499$</p>
+                <button onclick="addToCart('Смартфон', 499)">Добавить в корзину</button>
+            </div>
+            <div class="product" data-price="129">
+                <div class="product-images">
+                    <img src="tablet1.jpg" alt="Планшет 1" onclick="openModal('tablet1.jpg')">
+                    <img src="tablet2.jpg" alt="Планшет 2" onclick="openModal('tablet2.jpg')">
+                    <img src="tablet3.jpg" alt="Планшет 3" onclick="openModal('tablet3.jpg')">
+                    <img src="tablet4.jpg" alt="Планшет 4" onclick="openModal('tablet4.jpg')">
+                </div>
+                <h3>Планшет Apple iPad Pro</h3>
+                <p class="description">Удобный планшет с высокой разрешающей способностью и длительным временем работы.</p>
+                <p class="price">129$</p>
+                <button onclick="addToCart('Планшет', 129)">Добавить в корзину</button>
+            </div>
+            <div class="product" data-price="349">
+                <div class="product-images">
+                    <img src="camera1.jpg" alt="Камера 1" onclick="openModal('camera1.jpg')">
+                    <img src="camera2.jpg" alt="Камера 2" onclick="openModal('camera2.jpg')">
+                    <img src="camera3.jpg" alt="Камера 3" onclick="openModal('camera3.jpg')">
+                    <img src="camera4.jpg" alt="Камера 4" onclick="openModal('camera4.jpg')">
+                </div>
+                <h3>Камера Sony Alpha ZV-E10</h3>
+                <p class="description">Профессиональная камера с множеством функций для качественной съемки.</p>
+                <p class="price">349$</p>
+                <button onclick="addToCart('Камера', 349)">Добавить в корзину</button>
+            </div>
+            <div class="product" data-price="199">
+                <div class="product-images">
+                    <img src="smartwatch1.jpg" alt="Умные часы 1" onclick="openModal('smartwatch1.jpg')">
+                    <img src="smartwatch2.jpg" alt="Умные часы 2" onclick="openModal('smartwatch2.jpg')">
+                    <img src="smartwatch3.jpg" alt="Умные часы 3" onclick="openModal('smartwatch3.jpg')">
+                    <img src="smartwatch4.jpg" alt="Умные часы 4" onclick="openModal('smartwatch4.jpg')">
+                </div>
+                <h3>Apple Watch Series 9</h3>
+                <p class="description">Умные часы с множеством функций для отслеживания здоровья и активности.</p>
+                <p class="price">199$</p>
+                <button onclick="addToCart('Умные часы', 199)">Добавить в корзину</button>
+            </div>
+            <div class="product" data-price="349">
+                <div class="product-images">
+                    <img src="monitor1.jpg" alt="Монитор 1" onclick="openModal('monitor1.jpg')">
+                    <img src="monitor2.jpg" alt="Монитор 2" onclick="openModal('monitor2.jpg')">
+                    <img src="monitor3.jpg" alt="Монитор 3" onclick="openModal('monitor3.jpg')">
+                    <img src="monitor4.jpg" alt="Монитор 4" onclick="openModal('monitor4.jpg')">
+                </div>
+                <h3>Монитор AOC Q27G2E</h3>
+                <p class="description">Монитор с высоким разрешением и отличной цветопередачей.</p>
+                <p class="price">349$</p>
+                <button onclick="addToCart('Монитор', 349)">Добавить в корзину</button>
+            </div>
+            <div class="product" data-price="89">
+                <div class="product-images">
+                    <img src="keyboard1.jpg" alt="Клавиатура 1" onclick="openModal('keyboard1.jpg')">
+                    <img src="keyboard2.jpg" alt="Клавиатура 2" onclick="openModal('keyboard2.jpg')">
+                    <img src="keyboard3.jpg" alt="Клавиатура 3" onclick="openModal('keyboard3.jpg')">
+                    <img src="keyboard4.jpg" alt="Клавиатура 4" onclick="openModal('keyboard4.jpg')">
+                </div>
+                <h3>Клавиатура Red Square Keyrox TKL Aquarius</h3>
+                <p class="description">Эргономичная клавиатура с подсветкой для комфортной работы.</p>
+                <p class="price">89$</p>
+                <button onclick="addToCart('Клавиатура', 89)">Добавить в корзину</button>
+            </div>
+            <div class="product" data-price="159">
+                <div class="product-images">
+                    <img src="mouse1.jpg" alt="Мышь 1" onclick="openModal('mouse1.jpg')">
+                    <img src="mouse2.jpg" alt="Мышь 2" onclick="openModal('mouse2.jpg')">
+                    <img src="mouse3.jpg" alt="Мышь 3" onclick="openModal('mouse3.jpg')">
+                    <img src="mouse4.jpg" alt="Мышь 4" onclick="openModal('mouse4.jpg')">
+                </div>
+                <h3>Мышь LAMZU Atlantis V2</h3>
+                <p class="description">Игровая мышь с высокой точностью и дополнительными кнопками.</p>
+                <p class="price">159$</p>
+                <button onclick="addToCart('Мышь', 159)">Добавить в корзину</button>
+            </div>
+            <div class="product" data-price="249">
+                <div class="product-images">
+                    <img src="externaldrive1.jpg" alt="Внешний диск 1" onclick="openModal('externaldrive1.jpg')">
+                    <img src="externaldrive2.jpg" alt="Внешний диск 2" onclick="openModal('externaldrive2.jpg')">
+                    <img src="externaldrive3.jpg" alt="Внешний диск 3" onclick="openModal('externaldrive3.jpg')">
+                    <img src="externaldrive4.jpg" alt="Внешний диск 4" onclick="openModal('externaldrive4.jpg')">
+                </div>
+                <h3>Внешний SSD диск Samsung T7</h3>
+                <p class="description">Внешний диск для надежного хранения данных.</p>
+                <p class="price">249$</p>
+                <button onclick="addToCart('Внешний диск', 249)">Добавить в корзину</button>
+            </div>
+            <div class="product" data-price="399">
+                <div class="product-images">
+                    <img src="printer1.jpg" alt="Принтер 1" onclick="openModal('printer1.jpg')">
+                    <img src="printer2.jpg" alt="Принтер 2" onclick="openModal('printer2.jpg')">
+                    <img src="printer3.jpg" alt="Принтер 3" onclick="openModal('printer3.jpg')">
+                    <img src="printer4.jpg" alt="Принтер 4" onclick="openModal('printer4.jpg')">
+                </div>
+                <h3>Принтер Epson L8180</h3>
+                <p class="description">Принтер с возможностью печати в высоком разрешении и быстрой скоростью.</p>
+                <p class="price">399$</p>
+                <button onclick="addToCart('Принтер', 399)">Добавить в корзину</button>
+            </div>
+        </section>
+        
+        <section id="cart" class="tab-content" style="display: none;">
+            <h2>Ваша корзина</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Итоговая сумма: 0$</p>
+            <button onclick="clearCart()">Очистить корзину</button>
+            <button id="buy-now-button" onclick="openPurchaseModal()">Купить</button>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Магазин электроники. Все права защищены.</p>
+    </footer>
+
+    <!-- Модальное окно для изображений -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="caption"></div>
+    </div>
+    
+    <!-- Модальное окно для подтверждения покупки -->
+    <div id="purchase-modal" class="modal" onclick="closePurchaseModal()">
+        <span class="close" onclick="closePurchaseModal()">&times;</span>
+        <div class="modal-content">
+            <p>Оплата по номеру телефона 89190609686</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
